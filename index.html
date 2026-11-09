@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Practice</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>Shop Practice</h2>
+
+        <nav>
+            <a href="#catalogue">Catalogue</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="catalogue">
+
+            <h1>Catalogue des produits</h1>
+            <p>Découvrez notre sélection de produits</p>
+
+
+            <form id="filters-form">
+
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="Rechercher un produit..."
+                >
+
+                <select id="category">
+                    <option value="">Toutes les catégories</option>
+                </select>
+
+                <input
+                    type="number"
+                    id="max-price"
+                    placeholder="Prix maximum (DH)"
+                >
+
+                <label>
+                    <input type="checkbox" id="in-stock">
+                    En stock
+                </label>
+
+                <button>Filtrer</button>
+                <button>Réinitialiser</button>
+
+            </form>
+
+           
+            <p id="products-count">0 produits trouvés</p>
+
+            
+            <p id="loading-message" >
+                Chargement des produits...
+            </p>
+
+            <p id="error-message" ></p>
+
+            <p id="empty-message" >
+                Aucun produit trouvé.
+            </p>
+
+            
+            <div id="products-container">
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

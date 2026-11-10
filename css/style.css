@@ -1,0 +1,155 @@
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f5f5ff;
+    color: #17172f;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #30205f;
+    color: white;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#logo i {
+    background-color: #6735e8;
+    padding: 13px;
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.catalogue-link {
+    background-color: #5940a8;
+    padding: 12px 25px;
+    border-radius: 10px;
+}
+
+.catalogue-link a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+
+#catalogue {
+    padding: 25px ;
+}
+
+.catalogue-des-produits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.catalogue-des-produits h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.catalogue-des-produits p {
+    color: #64709a;
+    font-size: 17px;
+}
+
+
+#filters-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+
+#filters-form input,
+#filters-form input,
+#filters-form select {
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid #d4d5ed;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+
+
+#filters-form input,
+#filters-form select {
+    border-color: #6032df;
+}
+
+
+#filters-form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#in-stock {
+    width: 18px;
+    height: 18px;
+    accent-color: #6032df;
+}
+
+
+#filters-form button {
+    padding: 13px 22px;
+    border-radius: 10px;
+    background-color: #6032df;
+    color: white;
+    font-weight: 600;
+    
+}
+
+
+#filters-form button {
+    background-color: #f4f3fc;
+    color: #39217c;
+    border: 1px solid #d4d0ed;
+}
+
+#filters-form button:hover {
+    background-color: red;
+}
+
+
+
+/* Products */
+
+#products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}

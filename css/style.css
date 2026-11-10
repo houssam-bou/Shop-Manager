@@ -1,0 +1,64 @@
+/*           header            */ 
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: blue;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/*             main            */
+.catalogue-des-produits {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catalogue-des-produits h1 {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+}
+
+.catalogue-des-produits p {
+    color: #64748B;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+
+}
+
+.catalogue-link {
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 10px;
+    height: 40px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+}
+/*                form               */
+#filters-form{
+    display:flex ;
+    
+    justify-content: space-around;
+}

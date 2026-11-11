@@ -148,7 +148,7 @@ h2 {
 #products-container {
     padding: 55px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 
 }
@@ -163,6 +163,12 @@ article {
     flex-direction: column;
     padding: 25px 25px;
     gap: 10px;
+}
+
+#button-div{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
 }
 
 #add-product {

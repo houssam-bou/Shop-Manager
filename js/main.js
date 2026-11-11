@@ -29,8 +29,3 @@ async function getData() {
     });
 }
 
-let aa = getData();
-// async function handleData() {
-//     console.log(await aa);
-// }
-// handleData();

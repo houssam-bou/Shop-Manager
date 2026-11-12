@@ -1,31 +1,22 @@
-import { productsContainer } from "./ui.js";
+import { displayProducts, searchProductInput, searchProducts } from "./ui.js";
+import { products } from "./utils.js";
 
-async function getData() {
-    const response = await fetch("http://localhost:3002/api/products");
-    console.log(response.status);
 
-    if (!response.ok) {
-        const problem = await response.json();
-        console.log(problem.message);
-        return;
+displayProducts(products);
+
+
+
+
+searchProductInput.addEventListener("input", async (event) => {
+    const searchValue = event.target.value;
+    console.log(searchValue);
+    try {
+        const searchingProduct = await searchProducts(searchValue);
+
+        displayProducts(searchingProduct);
+
     }
-
-    const products = await response.json();
-    console.log(products);
-    // return products;
-    createElement(products);
-}
- function createElement(products) {
-    products.forEach(element => {
-        productsContainer.innerHTML += `<article>
-          <img src="http://localhost:3002${element.image}" alt="#" />
-          <div>
-            <h2>${element.name}</h2>
-            <h2>${element.price}$</h2>
-          </div>
-          <p>${element.description}</p>
-          <button>add product</button>
-        </article>`;
-    });
-}
-
+    catch (error) {
+        console.error(error);
+    }
+});

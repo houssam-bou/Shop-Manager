@@ -1,6 +1,6 @@
 import { url } from "./ui.js";
 
-export async function getData() {
+async function getData() {
     try {
         const response = await axios.get(url)
 
@@ -16,5 +16,5 @@ export async function getData() {
 }
 
 
-const response = await getData();
-export { response };
+const products = await getData();
+export { products , getData };

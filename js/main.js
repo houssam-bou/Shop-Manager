@@ -1,6 +1,9 @@
 import { productsContainer } from "./ui.js";
 import { response } from "./utils.js";
 
+
+createElement(response);
+
  function createElement(response) {
     response.forEach(element => {
         productsContainer.innerHTML += `<article>
@@ -16,6 +19,3 @@ import { response } from "./utils.js";
         </article>`;
     });
 }
-
-
-createElement(response);

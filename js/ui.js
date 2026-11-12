@@ -1,7 +1,9 @@
+
 const productsContainer = document.getElementById("products-container");
-const url = "http://localhost:3002/api/products";
+const url = "http://localhost:3002/api";
 const searchProductInput = document.getElementById("search");
 const productsCount = document.getElementById("products-count");
+const categorySelect = document.getElementById("category");
 
 
 
@@ -23,12 +25,23 @@ function displayProducts(products) {
         </article>`;
     });
 }
+function displayCategory(categories) {
+    
+    categorySelect.innerHTML = `<option value="">Toutes les catégories</option>`;
+    categories.forEach(element => {
+        categorySelect.innerHTML += `<option value="">${element.name}</option>`
+    })
+
+}
 
 async function searchProducts(searchValue) {
     try {
-        const response = await axios.get(`${url}`, {
+        const response = await axios.get(`${url}/products`, {
             params: {
-                search: searchValue
+                search: searchValue,
+                category: "electronics",
+                maxPrice: 500,
+                inStock: true
             }
         });
 
@@ -42,4 +55,4 @@ async function searchProducts(searchValue) {
 
 
 
-export {productsContainer, url, searchProductInput, displayProducts, productsCount, searchProducts};
+export { productsContainer, url, searchProductInput, displayProducts, productsCount, searchProducts, categorySelect ,displayCategory};

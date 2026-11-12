@@ -42,15 +42,15 @@
                     <input type="search" id="search" placeholder="Rechercher un produit...">
 
                     <select id="category">
-                        <option value="">Toutes les catégories</option>
+                        <option value="Toutes les catégories">Toutes les catégories</option>
                     </select>
 
                     <input type="number" id="max-price" placeholder="Prix maximum (DH)">
 
                     <label><input type="checkbox" id="in-stock"> En stock</label>
 
-                    <button>Filtrer</button>
-                    <button>Réinitialiser</button>
+                    <button id="filtrer">Filtrer</button>
+                    <button id="reintilasier">Réinitialiser</button>
 
                 </form>
             </div>
@@ -66,6 +66,7 @@
 
     </main>
     <script type="module" src="/js/main.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
 
 </html>

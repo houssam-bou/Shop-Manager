@@ -9,8 +9,9 @@ const maxPriceInput = document.getElementById("max-price");
 export {
     productsContainer, url, searchProductInput, displayProducts,
     productsCount, searchProductsByName, categorySelect, displayCategory, maxPriceInput,
-    searchProductsByCategories
+    searchProductsByCategories, searchProductsByPrice
 };
+
 
 function displayProducts(products) {
 
@@ -68,6 +69,23 @@ async function searchProductsByCategories(selectedCategorie) {
         console.error(error);
     }
 }
+async function searchProductsByPrice(maxPriceValue) {
+    try {
+        if (maxPriceValue == "")
+        {
+            displayProducts()
+        }
+        const response = await axios.get(`${url}/products`, {
+            params: {
+                maxPrice: maxPriceValue
+            }
+        });
 
+        return response.data;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 

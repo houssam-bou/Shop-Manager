@@ -1,4 +1,5 @@
-import { displayCategory, displayProducts, searchProductInput, searchProductsByName, searchProductsByCategories,categorySelect} from "./ui.js";
+import { displayCategory, displayProducts, searchProductInput, searchProductsByName,
+    searchProductsByCategories,categorySelect, searchProductsByPrice,maxPriceInput} from "./ui.js";
 import { products , categories} from "./utils.js";
 
 
@@ -29,6 +30,24 @@ categorySelect.addEventListener("change", async (event) =>{
         const searchingProductByCategories = await searchProductsByCategories(selectedCategorie);
 
         displayProducts(searchingProductByCategories);
+    }
+    catch (error) {
+        console.error(error);
+    }
+})
+maxPriceInput.addEventListener("input", async (event) =>{
+        const maxPriceValue = event.target.value;
+        
+    console.log(maxPriceValue);
+    try {
+        if (maxPriceValue == "")
+        {
+            displayProducts(products);
+            return;
+        }
+        const searchingProductByPrice = await searchProductsByPrice(maxPriceValue);
+
+        displayProducts(searchingProductByPrice);
     }
     catch (error) {
         console.error(error);

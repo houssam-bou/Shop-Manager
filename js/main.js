@@ -1,9 +1,9 @@
 import {
     displayCategory, displayProducts, searchProductInput, searchProductsByName,
     searchProductsByCategories, categorySelect, searchProductsByPrice, maxPriceInput,
-    searchProductsByStock, inStock, reintilasier
+    searchProductsByStock, inStock, reintilasierBtn, filtrerBtn, applyFilters
 } from "./ui.js";
-import { products, categories, getData } from "./utils.js";
+import { products, categories } from "./utils.js";
 
 
 displayProducts(products);
@@ -72,7 +72,8 @@ inStock.addEventListener("change", async (event) => {
         console.error(error);
     }
 })
-reintilasier.addEventListener("click", async () => {
+reintilasierBtn.addEventListener("click", async (event) => {
+    console.log(event.target);
 
     try {
 
@@ -87,3 +88,4 @@ reintilasier.addEventListener("click", async () => {
         console.error(error);
     }
 })
+filtrerBtn.addEventListener("click", applyFilters);

@@ -1,3 +1,5 @@
+
+
 const productsContainer = document.getElementById("products-container");
 const url = "http://localhost:3002/api";
 const searchProductInput = document.getElementById("search");
@@ -5,12 +7,14 @@ const productsCount = document.getElementById("products-count");
 const categorySelect = document.getElementById("category");
 const maxPriceInput = document.getElementById("max-price");
 const inStock = document.getElementById("in-stock");
-const reintilasier = document.getElementById("reintilasier");
+const reintilasierBtn = document.getElementById("reintilasier");
+const filtrerBtn = document.getElementById("filtrer");
 
 export {
     productsContainer, url, searchProductInput, displayProducts,
     productsCount, searchProductsByName, categorySelect, displayCategory, maxPriceInput,
-    searchProductsByCategories, searchProductsByPrice, searchProductsByStock, inStock, reintilasier
+    searchProductsByCategories, searchProductsByPrice, searchProductsByStock, inStock, reintilasierBtn,
+    filtrerBtn, applyFilters
 };
 
 
@@ -96,6 +100,43 @@ async function searchProductsByStock(enStock) {
         });
 
         return response.data;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+async function applyFilters() {
+    try {
+        const params = {};
+
+        const searchValue = searchProductInput.value;
+        const selectedCategory = categorySelect.value;
+        const maxPriceValue = maxPriceInput.value;
+        const stockValue = inStock.checked;
+        console.log(params);
+
+
+        if (searchValue !== "") {
+            params.search = searchValue;
+        }
+
+        if (selectedCategory !== "") {
+            params.categoryId = selectedCategory;
+        }
+
+        if (maxPriceValue !== "") {
+            params.maxPrice = maxPriceValue;
+        }
+
+        if (stockValue) {
+            params.inStock = true;
+        }
+        console.log(params);
+        const response = await axios.get(`${url}/products`, {
+            params
+        })
+        console.log(response.data);
+        displayProducts(response.data);
 
     } catch (error) {
         console.error(error);

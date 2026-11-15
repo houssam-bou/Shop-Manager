@@ -22,7 +22,7 @@ async function getCategory() {
         const response = await axios.get(`${url}/categories`)
 
         console.log(response.status);
-        
+
         const categories = response.data;
 
         return categories;
@@ -35,4 +35,4 @@ const categories = await getCategory();
 
 
 
-export { products, getData , categories, getCategory};
+export { products, getData, categories, getCategory };

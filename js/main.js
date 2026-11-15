@@ -1,6 +1,9 @@
-import { displayCategory, displayProducts, searchProductInput, searchProductsByName,
-    searchProductsByCategories,categorySelect, searchProductsByPrice,maxPriceInput} from "./ui.js";
-import { products , categories} from "./utils.js";
+import {
+    displayCategory, displayProducts, searchProductInput, searchProductsByName,
+    searchProductsByCategories, categorySelect, searchProductsByPrice, maxPriceInput,
+    searchProductsByStock, inStock, reintilasier
+} from "./ui.js";
+import { products, categories, getData } from "./utils.js";
 
 
 displayProducts(products);
@@ -22,9 +25,9 @@ searchProductInput.addEventListener("input", async (event) => {
     }
 });
 
-categorySelect.addEventListener("change", async (event) =>{
-        const selectedCategorie = event.target.value;
-        
+categorySelect.addEventListener("change", async (event) => {
+    const selectedCategorie = event.target.value;
+
     console.log(selectedCategorie);
     try {
         const searchingProductByCategories = await searchProductsByCategories(selectedCategorie);
@@ -35,13 +38,12 @@ categorySelect.addEventListener("change", async (event) =>{
         console.error(error);
     }
 })
-maxPriceInput.addEventListener("input", async (event) =>{
-        const maxPriceValue = event.target.value;
-        
+maxPriceInput.addEventListener("input", async (event) => {
+    const maxPriceValue = event.target.value;
+
     console.log(maxPriceValue);
     try {
-        if (maxPriceValue == "")
-        {
+        if (maxPriceValue == "") {
             displayProducts(products);
             return;
         }
@@ -50,6 +52,38 @@ maxPriceInput.addEventListener("input", async (event) =>{
         displayProducts(searchingProductByPrice);
     }
     catch (error) {
+        console.error(error);
+    }
+})
+inStock.addEventListener("change", async (event) => {
+    const enStock = event.target.checked;
+
+    console.log(enStock);
+    try {
+        if (!enStock) {
+            displayProducts(products);
+            return;
+        }
+        const searchingProductByStock = await searchProductsByStock(enStock);
+
+        displayProducts(searchingProductByStock);
+    }
+    catch (error) {
+        console.error(error);
+    }
+})
+reintilasier.addEventListener("click", async () => {
+
+    try {
+
+        searchProductInput.value = "";
+        categorySelect.value = "";
+        maxPriceInput.value = "";
+        inStock.checked = false;
+
+        displayProducts(products);
+
+    } catch (error) {
         console.error(error);
     }
 })

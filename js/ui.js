@@ -4,12 +4,13 @@ const searchProductInput = document.getElementById("search");
 const productsCount = document.getElementById("products-count");
 const categorySelect = document.getElementById("category");
 const maxPriceInput = document.getElementById("max-price");
-
+const inStock = document.getElementById("in-stock");
+const reintilasier = document.getElementById("reintilasier");
 
 export {
     productsContainer, url, searchProductInput, displayProducts,
     productsCount, searchProductsByName, categorySelect, displayCategory, maxPriceInput,
-    searchProductsByCategories, searchProductsByPrice
+    searchProductsByCategories, searchProductsByPrice, searchProductsByStock, inStock, reintilasier
 };
 
 
@@ -59,7 +60,7 @@ async function searchProductsByCategories(selectedCategorie) {
     try {
         const response = await axios.get(`${url}/products`, {
             params: {
-                categoryId : selectedCategorie
+                categoryId: selectedCategorie
             }
         });
 
@@ -71,9 +72,8 @@ async function searchProductsByCategories(selectedCategorie) {
 }
 async function searchProductsByPrice(maxPriceValue) {
     try {
-        if (maxPriceValue == "")
-        {
-            displayProducts()
+        if (maxPriceValue == "") {
+            displayProducts(products)
         }
         const response = await axios.get(`${url}/products`, {
             params: {
@@ -87,5 +87,17 @@ async function searchProductsByPrice(maxPriceValue) {
         console.error(error);
     }
 }
+async function searchProductsByStock(enStock) {
+    try {
+        const response = await axios.get(`${url}/products`, {
+            params: {
+                inStock: enStock
+            }
+        });
 
+        return response.data;
 
+    } catch (error) {
+        console.error(error);
+    }
+}

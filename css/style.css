@@ -169,11 +169,12 @@ article {
     display: flex;
     justify-content: center;
     padding-bottom: 25px;
+    gap: 25px;
 }
 
 #add-product {
     padding: 13px 22px;
-    width: 90%;
+    width: 70%;
     border-radius: 10px;
     background-color: #6032df;
     color: white;

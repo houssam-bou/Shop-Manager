@@ -33,6 +33,7 @@ function displayProducts(products) {
             </div>
             <div id="button-div">
             <button id="add-product" data-id="${element.id}">add product</button>
+            <input type="number" id="quantity" min="1" max="20" step="1" value="1">   
             </div>
         </article>`;
     });

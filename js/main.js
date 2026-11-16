@@ -1,7 +1,8 @@
 import {
     displayCategory, displayProducts, searchProductInput, searchProductsByName,
     searchProductsByCategories, categorySelect, searchProductsByPrice, maxPriceInput,
-    searchProductsByStock, inStock, reintilasierBtn, filtrerBtn, applyFilters
+    searchProductsByStock, inStock, reintilasierBtn, filtrerBtn, applyFilters,
+    applyColor, productsContainer, cartModal
 } from "./ui.js";
 import { products, categories } from "./utils.js";
 
@@ -89,3 +90,12 @@ reintilasierBtn.addEventListener("click", async (event) => {
     }
 })
 filtrerBtn.addEventListener("click", applyFilters);
+
+productsContainer.addEventListener("click" , (e) => {
+    let targetBtn  = e.target.closest('#add-product')
+    if(!targetBtn){
+       return ; 
+    }
+    console.log(targetBtn)
+    cartModal.classList.toggle("hidden")
+})

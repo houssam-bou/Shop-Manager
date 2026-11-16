@@ -139,12 +139,13 @@ h2 {
     background-color: red;
 }
 
-#products-count{
+#products-count {
     padding-top: 25px;
     display: flex;
     justify-content: flex-start;
     margin-left: 50px;
 }
+
 #products-container {
     padding: 55px;
     display: grid;
@@ -165,7 +166,7 @@ article {
     gap: 10px;
 }
 
-#button-div{
+#button-div {
     display: flex;
     justify-content: center;
     padding-bottom: 25px;
@@ -179,4 +180,24 @@ article {
     background-color: #6032df;
     color: white;
     font-weight: 600;
+}
+
+#cart-modal {
+    display: bolck;
+    width: 50%;
+    height: 100%;
+    background-color: #6032df;
+    position: fixed;
+    right: 0;
+
+}
+
+.hidden {
+    display: none;
+}
+#quantity{
+    width: 50px;
+    border-radius: 12px;
+    text-align: center;
+    border: none;
 }

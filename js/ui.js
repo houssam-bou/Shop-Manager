@@ -134,7 +134,7 @@ async function applyFilters() {
         console.log(params);
         const response = await axios.get(`${url}/products`, {
             params
-        })
+})
         console.log(response.data);
         displayProducts(response.data);
 

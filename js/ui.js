@@ -9,12 +9,16 @@ const maxPriceInput = document.getElementById("max-price");
 const inStock = document.getElementById("in-stock");
 const reintilasierBtn = document.getElementById("reintilasier");
 const filtrerBtn = document.getElementById("filtrer");
+const cartModal = document.getElementById("cart-modal");
+const addCardBtn = document.getElementById("add-product");
+
+
 
 export {
     productsContainer, url, searchProductInput, displayProducts,
     productsCount, searchProductsByName, categorySelect, displayCategory, maxPriceInput,
     searchProductsByCategories, searchProductsByPrice, searchProductsByStock, inStock, reintilasierBtn,
-    filtrerBtn, applyFilters
+    filtrerBtn, applyFilters, applyColor, cartModal
 };
 
 
@@ -143,3 +147,4 @@ async function applyFilters() {
         console.error(error);
     }
 }
+

@@ -2,7 +2,7 @@ import {
     displayCategory, displayProducts, searchProductInput, searchProductsByName,
     searchProductsByCategories, categorySelect, searchProductsByPrice, maxPriceInput,
     searchProductsByStock, inStock, reintilasierBtn, filtrerBtn, applyFilters,
-    applyColor, productsContainer, cartModal
+    productsContainer, cartModal, panierBtn, buttonCancelPanier, header, main
 } from "./ui.js";
 import { products, categories } from "./utils.js";
 
@@ -91,11 +91,31 @@ reintilasierBtn.addEventListener("click", async (event) => {
 })
 filtrerBtn.addEventListener("click", applyFilters);
 
-productsContainer.addEventListener("click" , (e) => {
-    let targetBtn  = e.target.closest('#add-product')
-    if(!targetBtn){
-       return ; 
+productsContainer.addEventListener("click", (e) => {
+    let targetBtn = e.target.closest('#add-product')
+    if (!targetBtn) {
+        return;
     }
     console.log(targetBtn)
-    cartModal.classList.toggle("hidden")
+    Swal.fire({
+        title: "Do you want to add this product?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Add product",
+        denyButtonText: `Don't add`
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire("Saved!", "", "success");
+            cartModal.classList.toggle("hidden");
+        }
+        else if (result.isDenied) Swal.fire("Changes are not saved", "", "info");
+    });
+
+})
+panierBtn.addEventListener("click", (e) => {
+    console.log(e.target, "you have clicked")
+    cartModal.classList.toggle("hidden");
+})
+buttonCancelPanier.addEventListener("click", (e) => {
+    cartModal.classList.toggle("hidden");
 })

@@ -11,7 +11,12 @@ async function getData() {
         return products;
 
     } catch (err) {
-        console.log(err.message);
+        Swal.fire({
+            title: err,
+            text: err.message,
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        })
     }
 }
 
@@ -28,7 +33,12 @@ async function getCategory() {
         return categories;
 
     } catch (err) {
-        console.log(err.message);
+        Swal.fire({
+            title: err,
+            text: err.message,
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        })
     }
 }
 const categories = await getCategory();

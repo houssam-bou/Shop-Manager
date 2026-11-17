@@ -10,15 +10,18 @@ const inStock = document.getElementById("in-stock");
 const reintilasierBtn = document.getElementById("reintilasier");
 const filtrerBtn = document.getElementById("filtrer");
 const cartModal = document.getElementById("cart-modal");
-const addCardBtn = document.getElementById("add-product");
-
+const panierBtn = document.getElementById("panier");
+const buttonCancelPanier = document.getElementById("button-cancel-panier");
+const modalProductsContainer = document.getElementById("modal-products-container");
+const header = document.querySelector("header");
+const main = document.querySelector("main");
 
 
 export {
     productsContainer, url, searchProductInput, displayProducts,
     productsCount, searchProductsByName, categorySelect, displayCategory, maxPriceInput,
     searchProductsByCategories, searchProductsByPrice, searchProductsByStock, inStock, reintilasierBtn,
-    filtrerBtn, applyFilters, applyColor, cartModal
+    filtrerBtn, applyFilters, cartModal, panierBtn, buttonCancelPanier, main, header
 };
 
 
@@ -148,3 +151,8 @@ async function applyFilters() {
     }
 }
 
+
+// function displayProductsInModal() {
+
+
+// }

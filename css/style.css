@@ -32,7 +32,7 @@ header {
     font-size: 25px;
 }
 
-h2 {
+h3 {
     font-size: 20px;
     font-weight: 700;
 }
@@ -132,7 +132,15 @@ h2 {
 #filters-form button:hover {
     background-color: red;
 }
-
+#reintilasier{
+    cursor: pointer;
+}
+#filtrer{
+    cursor: pointer;
+}
+#in-stock{
+    cursor: pointer;
+}
 #products-count {
     padding-top: 25px;
     display: flex;
@@ -145,12 +153,53 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+}
 
+#modal-products-container {
+    display: grid;
+    flex: 1;
+    gap: 25px;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 article {
     border-radius: 12px;
     border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+#overlay.hidden {
+    display: none;
+}
+
+.article-modal {
+    display: flex;
+    align-items: center;
+    height: 110px;
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.article-modal img {
+    width: 145px;
+    height: 100%;
+    object-fit: cover;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #6032df;
+    cursor: pointer;
 }
 
 #card-text {
@@ -158,6 +207,20 @@ article {
     flex-direction: column;
     padding: 25px 25px;
     gap: 10px;
+}
+
+#modal-card-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-left: 25px;
+    gap: 10px;
+}
+
+#modal-select-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #button-div {
@@ -174,17 +237,26 @@ article {
     background-color: #6032df;
     color: white;
     font-weight: 600;
+    cursor: pointer;
 }
 
 
 /*         modal         */
 #cart-modal {
-    display: bolck;
-    width: 40%;
-    height: 100%;
     position: fixed;
+    top: 0;
     right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    overflow: hidden;
+    z-index: 1000;
     background-color: #f5f5ff;
+}
+
+#cart-modal.hidden {
+    display: none;
 }
 
 .hidden {
@@ -205,6 +277,7 @@ article {
     padding: 10px 40px;
     gap: 25px;
     background-color: #30205f;
+    flex-shrink: 0;
 }
 
 .add-product-to-store h1 {
@@ -220,18 +293,39 @@ article {
 }
 
 .cancel-panier button {
-    color: black;
+    color: white;
     font-size: 25px;
     padding: 13px;
     background-color: #30205f;
     border: none;
-    padding-left: 130px;
+    cursor: pointer;
 }
+
 #panier {
     background-color: #5940a8;
     text-align: center;
     border: none;
     width: 40px;
     height: 15px;
+    cursor: pointer;
 }
 
+.section2 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+#modal-products-counter {
+    padding: 10px 0;
+}
+
+#modal-products-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 25px;
+
+    flex: 1;
+}

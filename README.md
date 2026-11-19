@@ -17,7 +17,6 @@ A web application for managing shop products, built with HTML, CSS, and JavaScri
 - **HTML5** — application structure
 - **CSS3** — styling and layout
 - **JavaScript (ES6+)** — application logic and DOM interactions
-- **Vite** — frontend development server and build tool
 - **Fetch API** — communication with the backend API
 
 ## Getting Started
@@ -81,8 +80,6 @@ Make sure the backend API is running before testing features that require it. If
 | Command | Description |
 | --- | --- |
 | `npm run dev` | Starts the Vite development server |
-| `npm run build` | Builds the application for production |
-| `npm run preview` | Previews the production build locally |
 
 ## Project Structure
 
@@ -119,6 +116,4 @@ Feature branches are merged into `develop` when completed.
 
 - GitHub: [@houssam-bou](https://github.com/houssam-bou)
 
-## License
 
-No license has been specified yet.

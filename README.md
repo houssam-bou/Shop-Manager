@@ -64,13 +64,13 @@ The frontend communicates with a backend API for product-related operations.
 For local development, the API endpoint used in the project has been:
 
 ```text
-http://localhost:3000/api/products
+http://localhost:3002/api/products
 ```
 
 For example, product search can use the `search` query parameter:
 
 ```text
-http://localhost:3000/api/products?search=keyboard
+http://localhost:3002/api/products?search=keyboard
 ```
 
 Make sure the backend API is running before testing features that require it. If your API URL changes, update the endpoint used by the frontend.

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Practice</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+
+<body>
+    <div id="overlay" class="hidden"></div>
+    <div id="cart-modal" class="hidden">
+
+        <div class="section1">
+            <div id="logo">
+                <i class="ph-bold ph-shopping-cart"></i>
+            </div>
+            <div class="add-product-to-store">
+                <h1>Add Product</h1>
+                <p>add a new product to your store</p>
+            </div>
+            <div class="cancel-panier">
+                <button id="button-cancel-panier">X</button>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div>
+                <p id="modal-products-counter"> produits trouvés</p>
+                <p id="modal-products-total"></p>
+            </div>
+            <div id="modal-products-container">
+            </div>
+        </div>
+    </div>
+
+
+    <header>
+        <div id="logo">
+            <i class="ph-bold ph-shopping-cart"></i>
+            <h2>Shop Practice</h2>
+        </div>
+        <div class="catalogue-link">
+            <button id="panier">Panier</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="catalogue">
+            <div class="catalogue-des-produits">
+                <h1>Catalogue des produits</h1>
+                <p>Découvrez notre sélection de produits</p>
+            </div>
+
+            <div class="">
+                <form id="filters-form">
+                    <input type="search" id="search" placeholder="Rechercher un produit...">
+
+                    <select id="category">
+                        <option value="Toutes les catégories">Toutes les catégories</option>
+                    </select>
+
+                    <input type="number" id="max-price" placeholder="Prix maximum ($)">
+
+                    <label><input type="checkbox" id="in-stock"> En stock</label>
+
+                    <button type="button" id="filtrer">Filtrer</button>
+                    <button type="button" id="reintilasier">Réinitialiser</button>
+
+                </form>
+            </div>
+            <div>
+                <p id="products-count"> produits trouvés</p>
+            </div>
+
+            <div id="products-container">
+
+            </div>
+
+        </section>
+
+    </main>
+    <script type="module" src="/js/main.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+</body>
+
+</html>
